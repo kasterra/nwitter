@@ -6,7 +6,7 @@ import {
   GithubAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
-import { auth } from "fbInstance";
+import { authService } from "fbInstance";
 import React, { useCallback, useState } from "react";
 
 const Auth = () => {
@@ -56,7 +56,7 @@ const Auth = () => {
     } else if (name === "github") {
       provider = new GithubAuthProvider();
     }
-    await signInWithPopup(auth, provider);
+    await signInWithPopup(authService, provider);
   }, []);
 
   return (
