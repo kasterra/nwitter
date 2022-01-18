@@ -7,7 +7,9 @@ function App() {
   const [init, setInit] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userObj, setUserObj] = useState(null);
-  const [userName, setUserName] = useState(authService.currentUser.displayName);
+  const [userName, setUserName] = useState(
+    authService.currentUser?.displayName || ""
+  );
 
   const refreshUser = () => {
     setUserName(authService.currentUser.displayName);
